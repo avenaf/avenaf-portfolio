@@ -27,7 +27,6 @@ export function Hero() {
       <PhotoTunnel />
       <div className="hero-title-layer" ref={titleRef}><p className="hero-overline">STAY CURIOUS</p><h1>Avena Fan</h1><p className="hero-subtitle">PRODUCT <span>·</span> BIOTECHNOLOGY <span>·</span> ART <span>·</span> EVERYTHING IN BETWEEN</p></div>
       <button className="hero-arrow" aria-label="Scroll to introduction" onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: reduced ? 'instant' : 'smooth' })}><ArrowDown size={25} strokeWidth={1.25} /><span>SCROLL TO EXPLORE</span></button>
-      <span className="hero-index">01 — 04</span>
     </div>
   </section>;
 }
