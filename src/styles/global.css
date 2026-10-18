@@ -117,9 +117,10 @@ button:focus-visible, a:focus-visible { outline: 2px solid currentColor; outline
   .listing-grid { padding-top: 43px; grid-template-columns: minmax(0,1fr); gap: 28px; }
   .listing-heading h2 { font-size: clamp(4rem, 13vw, 6rem); }
   .portfolio-entry { opacity: .55; }
-  .portfolio-entry:focus-within, .entry--open { opacity: 1; }
-  .portfolio-entry:hover:not(:focus-within):not(.entry--open) { opacity: .55; }
-  .portfolio-entry:hover:not(:focus-within):not(.entry--open) .entry-teaser { grid-template-rows: 0fr; }
+  .portfolio-entry:not(.entry--open) { opacity: .55; }
+  .portfolio-entry.entry--open { opacity: 1; }
+  .portfolio-entry:not(.entry--open) .entry-teaser { grid-template-rows: 0fr; }
+  .portfolio-entry:not(.entry--open) .entry-teaser p { padding-bottom: 0; }
   .entry-trigger { padding-top: 20px; }
   .entry-title { font-size: 1rem; }
   .entry-date { font-size: .7rem; }

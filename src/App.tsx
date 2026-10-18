@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Contact } from './components/Contact';
 import { EntrySection } from './components/EntrySection';
 import { Hero } from './components/Hero';
@@ -12,6 +12,16 @@ import './styles/global.css';
 export default function App() {
   const { theme, toggleTheme } = useTheme();
   const [expandedEntryId, setExpandedEntryId] = useState<string | null>(null);
+  useEffect(() => {
+    if (!expandedEntryId) return;
+    const closeOnOutsidePointer = (event: PointerEvent) => {
+      if (event.target instanceof Element && !event.target.closest('.entry--open')) {
+        setExpandedEntryId(null);
+      }
+    };
+    document.addEventListener('pointerdown', closeOnOutsidePointer);
+    return () => document.removeEventListener('pointerdown', closeOnOutsidePointer);
+  }, [expandedEntryId]);
   const toggleEntry = (entryId: string) => setExpandedEntryId(current => current === entryId ? null : entryId);
   return <>
     <Navigation />

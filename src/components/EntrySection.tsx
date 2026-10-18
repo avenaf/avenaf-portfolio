@@ -19,7 +19,7 @@ function Entry({ entry, opened, onToggle }: { entry: PortfolioEntry; opened: boo
       <span className="entry-main"><span className="entry-title">{entry.title}</span><span className="entry-date">{entry.dates}</span></span>
       <span className="entry-icon"><Plus size={19} strokeWidth={1.25} /></span>
     </button>
-    {/* Desktop hover reveals the one-line teaser. Focus and tap reveal it on mobile. */}
+    {/* Desktop hover/focus previews the teaser; mobile follows the toggle state. */}
     <div className="entry-teaser"><p>{entry.description}</p></div>
     <div id={`entry-panel-${entry.id}`} className="entry-details" inert={!opened}>
       <div className="entry-details-inner">
