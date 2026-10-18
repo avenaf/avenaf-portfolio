@@ -12,7 +12,10 @@ type Props = {
 function Entry({ entry, opened, onToggle }: { entry: PortfolioEntry; opened: boolean; onToggle: () => void }) {
   const hasDetails = Boolean(entry.details || entry.images?.length || entry.link);
   return <article className={`portfolio-entry ${opened ? 'entry--open' : ''}`}>
-    <button type="button" className="entry-trigger" aria-expanded={opened} aria-controls={`entry-panel-${entry.id}`} onClick={onToggle}>
+    <button type="button" className="entry-trigger" aria-expanded={opened} aria-controls={`entry-panel-${entry.id}`} onClick={event => {
+      onToggle();
+      if (opened && event.detail > 0) event.currentTarget.blur();
+    }}>
       <span className="entry-main"><span className="entry-title">{entry.title}</span><span className="entry-date">{entry.dates}</span></span>
       <span className="entry-icon"><Plus size={19} strokeWidth={1.25} /></span>
     </button>
