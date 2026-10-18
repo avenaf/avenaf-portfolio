@@ -45,6 +45,6 @@ export const heroPhotos = [
 ];
 
 export const portrait = {
-  src: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=max&w=1200&q=85',
-  alt: 'Temporary color portrait placeholder — replace with a photograph of Avena',
+  src: '/headshot.jpg',
+  alt: 'Avena smiling outdoors in a garden',
 };

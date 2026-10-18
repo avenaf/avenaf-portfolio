@@ -18,7 +18,7 @@ export function Navigation() {
     return () => document.removeEventListener('keydown', keyHandler);
   }, []);
   return <header className={`site-nav ${visible ? 'site-nav--visible' : ''}`} aria-hidden={!visible}>
-    <a className="nav-brand" href="#home" tabIndex={visible ? 0 : -1}>AF<span>©</span></a>
+    <a className="nav-brand" href="#home" tabIndex={visible ? 0 : -1}>AF</a>
     <nav className="nav-desktop" aria-label="Main navigation">{links.map(link => <a tabIndex={visible ? 0 : -1} href={link.href} key={link.href}>{link.text}</a>)}</nav>
     <button className="nav-mobile-toggle" tabIndex={visible ? 0 : -1} aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen(v => !v)}>{open ? <X size={24} /> : <Menu size={24} />}</button>
     <nav id="mobile-menu" className={`nav-mobile-menu ${open ? 'nav-mobile-menu--open' : ''}`} aria-label="Mobile navigation" inert={!open}>{links.map(link => <a key={link.href} href={link.href} onClick={() => setOpen(false)}>{link.text}</a>)}</nav>

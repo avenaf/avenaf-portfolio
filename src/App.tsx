@@ -12,7 +12,7 @@ export default function App() {
   const { theme, toggleTheme } = useTheme();
   return <>
     <Navigation />
-    <main><Hero /><Introduction /><EntrySection id="experience" title="Experience" index="02" entries={experience} /><EntrySection id="projects" title="Projects" index="03" entries={projects} projects /></main>
+    <main><Hero /><Introduction /><EntrySection id="experience" title="Experience" index="02" entries={experience} /><EntrySection id="projects" title="Projects" index="03" entries={projects} /></main>
     <Contact />
     <ThemeToggle theme={theme} onToggle={toggleTheme} />
   </>;

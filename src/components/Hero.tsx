@@ -9,19 +9,10 @@ export function Hero() {
   useEffect(() => {
     if (reduced) return;
     let scheduled = false;
-    let titleOpacity = 1;
-    let previousScroll = window.scrollY;
     const update = () => {
       const scrollY = window.scrollY;
-      const delta = scrollY - previousScroll;
-      const fadeDistance = window.innerHeight * 0.55;
-      if (delta < 0) titleOpacity = Math.max(0, titleOpacity + delta / fadeDistance);
-      else if (delta > 0) titleOpacity = Math.min(1, titleOpacity + delta / fadeDistance);
-      previousScroll = scrollY;
-      const progress = Math.max(0, Math.min(1, scrollY / (window.innerHeight * 0.77)));
       if (titleRef.current) {
-        titleRef.current.style.opacity = String(titleOpacity);
-        titleRef.current.style.transform = `translateY(${-progress * window.innerHeight * 0.65}px)`;
+        titleRef.current.style.transform = `translateY(${-scrollY * 0.65}px)`;
       }
       scheduled = false;
     };
