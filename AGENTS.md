@@ -1,9 +1,13 @@
-<!-- BEGIN:nextjs-agent-rules -->
+# Project Guidelines
 
-## This is NOT the Next.js you know
+## Architecture
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+- The repository root is the React + Vite application. `index.html` loads `src/main.tsx`.
+- Keep UI in `src/components/`, portfolio content in `src/data/content.ts`, and static assets in `public/`.
+- Do not reintroduce the removed Next.js scaffold unless the application architecture is intentionally changed.
 
-This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+## Build and validation
 
-<!-- END:nextjs-agent-rules -->
+- Install dependencies with `npm install`.
+- Run `npm run dev` for local development.
+- Run `npm run typecheck`, `npm run lint`, and `npm run build` to validate changes.
